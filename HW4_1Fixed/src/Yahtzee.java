@@ -43,8 +43,7 @@ public class Yahtzee implements Runnable {
             _label.setIcon(dicepic(a));
             sum = a + 1;
             ThreadTest.getFrame().revalidate();
-            System.out.println(sum);
-
+            
         }
 
 
