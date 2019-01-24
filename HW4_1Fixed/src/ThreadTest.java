@@ -1,3 +1,9 @@
+/**
+ * This class is the thread manager for the Yahtzee game.
+ * @author Griffen Marler
+ * @version 1.00, 23 January 2019
+ */
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -8,6 +14,12 @@ public class ThreadTest  {
     private JLabel Sumtrack = new JLabel();
     private static JFrame frame = new JFrame();
     private int finalsum;
+
+    /**
+     * Initialize the threadtest given no parameters.
+     * Create 5 threads total and pass in a new JLabel to
+     * each thread.
+     */
     public ThreadTest() {
 
         frame.setPreferredSize(new Dimension(600, 600));
@@ -69,6 +81,12 @@ public class ThreadTest  {
 
     }
 
+    /**
+     * This function generates a dice picture based off the given input.
+     * The pictures are named 0, 1, 2,3,4,5 in the resources file
+     * @param a The number of picture that will be used
+     * @return the picture of the dice
+     */
     public ImageIcon dicepic(int a) {
         Toolkit toolkit = Toolkit.getDefaultToolkit();
         URL PIC = getClass().getResource("/resources/"+a +".png");
@@ -79,6 +97,10 @@ public class ThreadTest  {
         return DiceIcon;
     }
 
+    /**
+     * Get the frame
+     * @return frame
+     */
     public static JFrame getFrame() {
         return frame;
     }
