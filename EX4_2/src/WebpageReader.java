@@ -1,3 +1,9 @@
+/**
+ * This class models a webpage reader and will store URLs and
+ * emails as the Spider cralws through the web. This class
+ * also implements runnable.
+ */
+
 import javax.swing.*;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -18,7 +24,11 @@ public class WebpageReader implements Runnable {
     private String emailRegex = "\"mailto:(.*?)\"";
     private ArrayList<String> URLList = new ArrayList<>();
 
-
+    /**
+     * This class creates a new WebpageReader given a
+     * String url
+     * @param url The url that will be crawled
+     */
     public WebpageReader(String url) {
         try {
             _url = new URL(url);
@@ -29,10 +39,17 @@ public class WebpageReader implements Runnable {
 
     }
 
+    /**
+     * Get the URLs
+     * @return url list
+     */
     public static HashMap <String, Boolean> getUrls() {             // Static so it is shared between each threat
         return URLStorage;
     }
 
+    /**
+     * Print out all the emails that were gathered during the search
+     */
     public static void printEmails() {
         List<String> EmailList = new ArrayList<String>(EmailStorage);
         System.out.println("List of emails gathered during search: ");
@@ -41,6 +58,11 @@ public class WebpageReader implements Runnable {
         }
     }
 
+    /**
+     * Create the thread for the new webpage reader,
+     * search through and add text to the appropriate places
+     * based off the URL regex and the email regex.
+     */
     public void run() {
         if(_url == null) return; {
 

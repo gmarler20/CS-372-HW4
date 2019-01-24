@@ -1,3 +1,8 @@
+/**
+ * This class serves as the thread manager for the webpage reader.
+ * @author Griffen Marler
+ * @version 1.00 23 January 2019
+ */
 public class ThreadTest {
     private String[] webpages = {
             "https://www.portlandoregon.gov/parks/article/639578",
@@ -7,10 +12,11 @@ public class ThreadTest {
             "https://www.facebook.com/",
             "https://www.quantcast.com/top-sites/"
 
-
-
     };
 
+    /**
+     * Create new threads based on number of strings in the array
+     */
     public ThreadTest() {
         WebpageReader[] cs = new WebpageReader[webpages.length];
         for(int i = 0; i < cs.length; i++) {
